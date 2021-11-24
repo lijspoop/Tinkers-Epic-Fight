@@ -1,2 +1,2 @@
-# Tinkers-Rapier
-Bring TIC's Rapier to 1.16.5 TiC 3.
+# Tinkers-Epic-Fight
+Aims to provide integration between Tinker's Construct and Epic Fight
