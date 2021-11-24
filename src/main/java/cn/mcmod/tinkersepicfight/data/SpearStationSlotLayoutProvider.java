@@ -18,7 +18,7 @@ public class SpearStationSlotLayoutProvider extends AbstractStationSlotLayoutPro
 
     @Override
     protected void addLayouts() {
-        defineModifiable(TiCItemRegistry.Spear)
+        defineModifiable(TiCItemRegistry.SPEAR)
         .sortIndex(SORT_WEAPON)
         .addInputItem(TinkerToolParts.smallBlade, 62, 8)
         .addInputItem(TinkerToolParts.toughHandle, 44, 26)
