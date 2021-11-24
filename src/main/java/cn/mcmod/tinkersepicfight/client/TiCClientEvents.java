@@ -1,6 +1,6 @@
-package cn.mcmod.tinker_rapier.client;
+package cn.mcmod.tinkersepicfight.client;
 
-import cn.mcmod.tinker_rapier.item.TiCItemRegistry;
+import cn.mcmod.tinkersepicfight.item.TiCItemRegistry;
 import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
@@ -13,6 +13,6 @@ public class TiCClientEvents {
     @SubscribeEvent
     public static void itemColors(ColorHandlerEvent.Item event) {
             final ItemColors colors = event.getItemColors();
-            ToolClientEvents.registerToolItemColors(colors, TiCItemRegistry.RAPIER);
+            ToolClientEvents.registerToolItemColors(colors, TiCItemRegistry.SPEAR);
     }
 }

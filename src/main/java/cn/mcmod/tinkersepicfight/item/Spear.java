@@ -1,10 +1,10 @@
-package cn.mcmod.tinker_rapier.item;
+package cn.mcmod.tinkersepicfight.item;
 
 import java.util.List;
 
-import cn.mcmod.tinker_rapier.RapierConfig;
-import cn.mcmod.tinker_rapier.RapierMain;
-import cn.mcmod.tinker_rapier.RapierUtil;
+import cn.mcmod.tinkersepicfight.SpearConfig;
+import cn.mcmod.tinkersepicfight.SpearMain;
+import cn.mcmod.tinkersepicfight.SpearUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,39 +21,39 @@ import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.tools.item.small.SwordTool;
 
-public class RapierTiC extends SwordTool {
+public class Spear extends SwordTool {
 
-//    static final ToolBaseStatDefinition RAPIER_BASE = new ToolBaseStatDefinition.Builder()
+//    static final ToolBaseStatDefinition SPEAR_BASE = new ToolBaseStatDefinition.Builder()
 //            .bonus(ToolStats.ATTACK_DAMAGE, 1f)
 //            .modifier(ToolStats.ATTACK_DAMAGE, 1f)
 //            .set(ToolStats.ATTACK_SPEED, 3.0f)
 //            .modifier(ToolStats.MINING_SPEED, 1f)
-//            .modifier(ToolStats.DURABILITY, RapierConfig.RAPIER_DURABILITY.get().floatValue())
+//            .modifier(ToolStats.DURABILITY, SpearConfig.SPEAR_DURABILITY.get().floatValue())
 //            .startingSlots(SlotType.UPGRADE, 2)
 //            .build();
 
-    public static final ToolDefinition RAPIER = ToolDefinition
-              .builder(TiCItemRegistry.RAPIER)
+    public static final ToolDefinition SPEAR = ToolDefinition
+              .builder(TiCItemRegistry.SPEAR)
               .meleeHarvest()
-//            .builder(RAPIER_BASE)
+//            .builder(SPEAR_BASE)
 //            .addPart(TinkerToolParts.smallBlade)
 //            .addPart(TinkerToolParts.toughHandle)
 //            .addPart(TinkerToolParts.toolHandle)
 //            .addModifier(TinkerModifiers.silkyShears)
             .build();
 
-    public RapierTiC() {
-        super(new Item.Properties().addToolType(TOOL_TYPE, 0).tab(RapierMain.WEAPON_GROUP), RAPIER);
+    public Spear() {
+        super(new Item.Properties().addToolType(TOOL_TYPE, 0).tab(SpearMain.WEAPON_GROUP), SPEAR);
     }
 
     @Override
     public ActionResult<ItemStack> use(World level, PlayerEntity player, Hand hand) {
-        return RapierUtil.useRapier(level, player, hand);
+        return SpearUtil.useSpear(level, player, hand);
     }
     
     @Override
     public boolean dealDamage(IModifierToolStack stack, ToolAttackContext context, float damage) {
-        if(RapierConfig.CLASSIC_ATK.get())
+        if(SpearConfig.CLASSIC_ATK.get())
             damage *= 0.5F;
         return super.dealDamage(stack, context, damage);
     }
@@ -64,8 +64,8 @@ public class RapierTiC extends SwordTool {
             return super.onLeftClickEntity(stack, player, entity);
         LivingEntity target = (LivingEntity) entity;
         float baseDamage = ToolAttackUtil.getAttributeAttackDamage(ToolStack.from(stack), player, Hand.MAIN_HAND);
-        if(!RapierConfig.CLASSIC_ATK.get())
-            RapierUtil.DoStingAttack(stack, (baseDamage * 0.75F), calculateExtraDamage(baseDamage, ToolStack.from(stack), player, target), player, target);
+        if(!SpearConfig.CLASSIC_ATK.get())
+            SpearUtil.DoStingAttack(stack, (baseDamage * 0.75F), calculateExtraDamage(baseDamage, ToolStack.from(stack), player, target), player, target);
         return super.onLeftClickEntity(stack, player, entity);
     }
 

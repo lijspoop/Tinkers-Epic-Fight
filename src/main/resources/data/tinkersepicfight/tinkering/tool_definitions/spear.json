@@ -33,8 +33,12 @@
       "name": "tconstruct:two_handed",
       "level": 1
     },
-	{
+	  {
       "name": "tconstruct:piercing",
+      "level": 1
+    },
+	  {
+      "name": "tconstruct:reach",
       "level": 1
     }
   ]

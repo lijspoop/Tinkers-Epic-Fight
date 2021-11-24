@@ -1,4 +1,4 @@
-package cn.mcmod.tinker_rapier;
+package cn.mcmod.tinkersepicfight;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,26 +12,9 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class RapierUtil {
-    public static ActionResult<ItemStack> useRapier(World level, PlayerEntity player, Hand hand) {
+public class SpearUtil {
+    public static ActionResult<ItemStack> useSpear(World level, PlayerEntity player, Hand hand) {
         ItemStack itemStackIn = player.getItemInHand(hand);
-        if (!player.isOnGround()) {
-            player.causeFoodExhaustion(0.1f);
-            float f = 0.25F;
-            float motionX = MathHelper.sin(player.yRot / 180.0F * (float) Math.PI)
-                    * MathHelper.cos(player.xRot / 180.0F * (float) Math.PI) * f;
-            float motionZ = -MathHelper.cos(player.yRot / 180.0F * (float) Math.PI)
-                    * MathHelper.cos(player.xRot / 180.0F * (float) Math.PI) * f;
-            player.setDeltaMovement(motionX, 0.2F, motionZ);
-
-        } else {
-            float f = 0.5F;
-            float motionX = MathHelper.sin(player.yRot / 180.0F * (float) Math.PI)
-                    * MathHelper.cos(player.xRot / 180.0F * (float) Math.PI) * f;
-            float motionZ = -MathHelper.cos(player.yRot / 180.0F * (float) Math.PI)
-                    * MathHelper.cos(player.xRot / 180.0F * (float) Math.PI) * f;
-            player.setDeltaMovement(motionX, 0.1F, motionZ);
-        }
         player.getCooldowns().addCooldown(itemStackIn.getItem(), 5);
         ActionResultType result = ActionResultType.SUCCESS;
         if (hand == Hand.MAIN_HAND) {
@@ -52,7 +35,7 @@ public class RapierUtil {
             f1 = f1 * f2;
         }
         f += f1;
-        if (RapierConfig.CLASSIC_ATK.get()) {
+        if (SpearConfig.CLASSIC_ATK.get()) {
             f *= 0.5F;
             boolean flag5 = isPlayer
                     ? target.hurt(DamageSource.playerAttack((PlayerEntity) attacker).bypassArmor().bypassMagic(), f)

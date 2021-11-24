@@ -1,6 +1,6 @@
-package cn.mcmod.tinker_rapier.data;
+package cn.mcmod.tinkersepicfight.data;
 
-import cn.mcmod.tinker_rapier.RapierMain;
+import cn.mcmod.tinkersepicfight.SpearMain;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,16 +15,16 @@ public class DataGen {
     public static void dataGen(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         if(event.includeServer()) {
-            generator.addProvider(new RapierRecipeProvider(generator));
-            generator.addProvider(new RapierDefinitionDataProvider(generator, RapierMain.MODID));
-            generator.addProvider(new RapierStationSlotLayoutProvider(generator));
+            generator.addProvider(new SpearRecipeProvider(generator));
+            generator.addProvider(new SpearDefinitionDataProvider(generator, SpearMain.MODID));
+            generator.addProvider(new SpearStationSlotLayoutProvider(generator));
         }
         if (event.includeClient()) {
             ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
             TinkerMaterialSpriteProvider materialSprites = new TinkerMaterialSpriteProvider();
-            RapierTextureProvider rapierSprites = new RapierTextureProvider(RapierMain.MODID);
-//            generator.addProvider(new GeneratorPartTextureJsonGenerator(generator, RapierMain.MOD_ID, partSprites));
-            generator.addProvider(new MaterialPartTextureGenerator(generator, existingFileHelper, rapierSprites, materialSprites));
+            SpearTextureProvider SpearSprites = new SpearTextureProvider(SpearMain.MODID);
+//            generator.addProvider(new GeneratorPartTextureJsonGenerator(generator, SpearMain.MOD_ID, partSprites));
+            generator.addProvider(new MaterialPartTextureGenerator(generator, existingFileHelper, SpearSprites, materialSprites));
         }
     }
 }
