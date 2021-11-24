@@ -21,7 +21,7 @@ public class SpearDefinitionDataProvider extends AbstractToolDefinitionDataProvi
 
     @Override
     protected void addToolDefinitions() {
-        define(Spear.Spear)
+        define(Spear.SPEAR)
             .part(TinkerToolParts.smallBlade)
             .part(TinkerToolParts.toughHandle)
             .part(TinkerToolParts.toolHandle)
@@ -29,7 +29,7 @@ public class SpearDefinitionDataProvider extends AbstractToolDefinitionDataProvi
             .stat(ToolStats.ATTACK_DAMAGE, 3.0f)
             .stat(ToolStats.ATTACK_SPEED, 1.6f)
             .stat(ToolStats.MINING_SPEED, 0.5f)
-            .stat(ToolStats.DURABILITY, SpearConfig.Spear_DURABILITY.get().floatValue())
+            .stat(ToolStats.DURABILITY, SpearConfig.SPEAR_DURABILITY.get().floatValue())
             .largeToolStartingSlots()
             .trait(TinkerModifiers.twoHanded)
             .trait(TinkerModifiers.piercing)
