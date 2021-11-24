@@ -1,0 +1,10 @@
+{
+	"slots": [
+		{ "position": [ 62, 8 ] },
+		{ "position": [ 44, 26 ] },
+		{ "position": [ 26, 44 ] },
+		{ "position": [ 8, 62 ] }
+	],
+	"item": "tinkersepicfight:spear",
+	"sortIndex": 15
+}
