@@ -1,0 +1,43 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT License"
+issueTrackerURL="https://github.com/Magnymbus/tinkersepicfight/issues"
+[[mods]] #mandatory
+modId="tinkersepicfight"
+version="${file.jarVersion}"
+displayName="Tinkers' Epic Fight" #mandatory
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+# A file name (in the root of the mod JAR) containing a logo for display
+#logoFile="rapier.png" #optional
+credits="Thanks All contributors of TiC"
+authors="MCMOD Modding Group" 
+# The description text for the mod (multi line!) (#mandatory)
+description='''
+Aims to provide integration between Tinkers Construct and Epic Fight
+'''
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.tinkersepicfight]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[36,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+# Here's another dependency
+[[dependencies.tinkersepicfight]]
+    modId="minecraft"
+    mandatory=true
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.tinkersepicfight]]
+    modId="tconstruct"
+    mandatory=true
+    versionRange="[1.16.5-3.2.0.290, )"
+    ordering="AFTER"
+    side="BOTH"
