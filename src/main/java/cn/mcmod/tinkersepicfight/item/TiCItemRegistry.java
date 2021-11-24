@@ -9,5 +9,5 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class TiCItemRegistry {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SpearMain.MODID);
 
-    public static final RegistryObject<Spear> SPEAR = ITEMS.register("spear", Spear::new);
+    public static final RegistryObject<SpearTiC> SPEAR = ITEMS.register("spear_tic", SpearTiC::new);
 }

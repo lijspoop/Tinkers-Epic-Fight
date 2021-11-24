@@ -21,7 +21,7 @@ import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.tools.item.small.SwordTool;
 
-public class Spear extends SwordTool {
+public class SpearTiC extends SwordTool {
 
 //    static final ToolBaseStatDefinition SPEAR_BASE = new ToolBaseStatDefinition.Builder()
 //            .bonus(ToolStats.ATTACK_DAMAGE, 1f)
@@ -42,7 +42,7 @@ public class Spear extends SwordTool {
 //            .addModifier(TinkerModifiers.silkyShears)
             .build();
 
-    public Spear() {
+    public SpearTiC() {
         super(new Item.Properties().addToolType(TOOL_TYPE, 0).tab(SpearMain.WEAPON_GROUP), SPEAR);
     }
 

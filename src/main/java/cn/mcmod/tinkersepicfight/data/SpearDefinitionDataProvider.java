@@ -1,7 +1,7 @@
 package cn.mcmod.tinkersepicfight.data;
 
 import cn.mcmod.tinkersepicfight.SpearConfig;
-import cn.mcmod.tinkersepicfight.item.Spear;
+import cn.mcmod.tinkersepicfight.item.SpearTiC;
 import net.minecraft.data.DataGenerator;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
@@ -21,7 +21,7 @@ public class SpearDefinitionDataProvider extends AbstractToolDefinitionDataProvi
 
     @Override
     protected void addToolDefinitions() {
-        define(Spear.SPEAR)
+        define(SpearTiC.SPEAR)
             .part(TinkerToolParts.smallBlade)
             .part(TinkerToolParts.toughHandle)
             .part(TinkerToolParts.toolHandle)
