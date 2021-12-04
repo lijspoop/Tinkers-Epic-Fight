@@ -20,11 +20,11 @@
 		"large": [ "tinkersepicfight:item/tool/tachi/large/modifiers/" ]
 	},
 	"large": true,
-	"large_offset": [-20, 20],
+	"large_offset": [5, -5],
 	"parts": [
-		{ "name": "handle",		"index": 1},
 		{ "name": "head",		"index": 0, "broken": "broken_head" },
-		{ "name": "guard",		"index": 2},
-		{ "name": "accessory",	"index": 3}
+		{ "name": "handle",		"index": 3},
+		{ "name": "accessory",	"index": 2},
+		{ "name": "guard",		"index": 1}
 	]
 }

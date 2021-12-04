@@ -17,9 +17,9 @@ public class PartSpriteProvider extends AbstractPartSpriteProvider {
     protected void addAllSpites() {
         buildTool("spear")
                 .addBreakableHead("blade")
-                .addHandle("guard")
-                .addHandle("accessory")
                 .addHandle("handle")
+                .addHandle("accessory")
+                .addHandle("guard")
                 .withLarge();
         /*
          * 
@@ -40,9 +40,9 @@ public class PartSpriteProvider extends AbstractPartSpriteProvider {
 
         buildTool("tachi")
                 .addBreakableHead("blade")
-                .addBinding("guard")
-                .addHead("accessory")
                 .addHandle("handle")
+                .addHead("accessory")
+                .addBinding("guard")
                 .withLarge();
     }
 }

@@ -30,8 +30,9 @@ public class TEFTagsProvider extends ItemTagsProvider {
     public String getName() {
         return "Tinkers' Epic Fight Item Tags";
     }
-
-    protected void registerTags() {
+    
+    @Override
+    protected void addTags() {
         addTEFTags(TEFTools.spear, MULTIPART_TOOL, DURABILITY, HARVEST, MELEE_PRIMARY, ONE_HANDED, SWORD, AOE);
         // addTEFTags(TEFTools.spear, MULTIPART_TOOL, DURABILITY, HARVEST,
         // MELEE_PRIMARY, TWO_HANDED, SWORD, AOE);
