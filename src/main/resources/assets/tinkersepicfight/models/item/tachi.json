@@ -1,0 +1,30 @@
+{
+	"loader": "tconstruct:tool",
+	"parent": "forge:item/default-tool",
+	"textures": {
+		"head":			"tinkersepicfight:item/tool/tachi/blade",
+		"broken_head":	"tinkersepicfight:item/tool/tachi/broken_blade",
+		"handle":		"tinkersepicfight:item/tool/tachi/handle",
+		"guard":		"tinkersepicfight:item/tool/tachi/guard",
+		"accessory":	"tinkersepicfight:item/tool/tachi/accessory",
+
+
+		"large_head":			"tinkersepicfight:item/tool/tachi/large/blade",
+		"large_broken_head":	"tinkersepicfight:item/tool/tachi/large/broken_blade",
+		"large_handle":			"tinkersepicfight:item/tool/tachi/large/handle",
+		"large_guard":			"tinkersepicfight:item/tool/tachi/large/guard",
+		"large_accessory":		"tinkersepicfight:item/tool/tachi/large/accessory"
+	},
+	"modifier_roots": {
+		"small": [ "tinkersepicfight:item/tool/tachi/modifiers/" ],
+		"large": [ "tinkersepicfight:item/tool/tachi/large/modifiers/" ]
+	},
+	"large": true,
+	"large_offset": [-20, 20],
+	"parts": [
+		{ "name": "handle",		"index": 1},
+		{ "name": "head",		"index": 0, "broken": "broken_head" },
+		{ "name": "guard",		"index": 2},
+		{ "name": "accessory",	"index": 3}
+	]
+}

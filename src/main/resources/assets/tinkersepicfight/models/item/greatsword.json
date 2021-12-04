@@ -1,0 +1,30 @@
+{
+	"loader": "tconstruct:tool",
+	"parent": "forge:item/default-tool",
+	"textures": {
+		"head":			"tinkersepicfight:item/tool/greatsword/blade",
+		"broken_head":	"tinkersepicfight:item/tool/greatsword/broken_blade",
+		"handle":		"tinkersepicfight:item/tool/greatsword/handle",
+		"guard":		"tinkersepicfight:item/tool/greatsword/guard",
+		"accessory":	"tinkersepicfight:item/tool/greatsword/accessory",
+
+
+		"large_head":			"tinkersepicfight:item/tool/greatsword/large/blade",
+		"large_broken_head":	"tinkersepicfight:item/tool/greatsword/large/broken_blade",
+		"large_handle":			"tinkersepicfight:item/tool/greatsword/large/handle",
+		"large_guard":			"tinkersepicfight:item/tool/greatsword/large/guard",
+		"large_accessory":		"tinkersepicfight:item/tool/greatsword/large/accessory"
+	},
+	"modifier_roots": {
+		"small": [ "tinkersepicfight:item/tool/greatsword/modifiers/" ],
+		"large": [ "tinkersepicfight:item/tool/greatsword/large/modifiers/" ]
+	},
+	"large": true,
+	"large_offset": [-2, 2],
+	"parts": [
+		{ "name": "handle",		"index": 1},
+		{ "name": "head",		"index": 0, "broken": "broken_head" },
+		{ "name": "guard",		"index": 2},
+		{ "name": "accessory",	"index": 3}
+	]
+}

@@ -17,7 +17,7 @@
 	},
 	"modifier_roots": {
 		"small": [ "tinkersepicfight:item/tool/spear/modifiers/" ],
-		"large": [ "tinkersepicfight:item/tool/spear/large/modifiers/" ],
+		"large": [ "tinkersepicfight:item/tool/spear/large/modifiers/" ]
 	},
 	"large": true,
 	"large_offset": [-2, 2],

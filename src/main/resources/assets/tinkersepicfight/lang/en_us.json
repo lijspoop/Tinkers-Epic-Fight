@@ -1,4 +1,11 @@
 {
 	"item.tinkersepicfight.spear": "Spear",
-	"item.tinkersepicfight.spear.description": "The Spear is a lengthy weapon, it's long range and quick pokes make for an ideal shield companion."
+	"item.tinkersepicfight.spear.description": "The Spear is a lengthy weapon, its long range and quick pokes make for an ideal shield companion.",
+	"item.tinkersepicfight.tachi": "Tachi",
+	"item.tinkersepicfight.tachi.description": "The Tachi is a bloodthirsty weapon, the deep lacerations it deals make it a good choice for dealing with fast enemies.",
+	"item.tinkersepicfight.greatsword": "Greatsword",
+	"item.tinkersepicfight.greatsword.description": "The Greatsword is a devastating weapon, its wide sweeps and heavy hits make it great for crowd control.",
+	"item.tinkersepicfight.longsword": "Longsword",
+	"item.tinkersepicfight.longsword.description": "The Longsword is a versatile weapon, It provides a balanced option for those who don't want to use a shield.",
+	"itemGroup.tinkersepicfight.tools": "Tinkers' Epic Fight Tools"
 }
