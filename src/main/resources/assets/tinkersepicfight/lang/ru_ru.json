@@ -1,0 +1,11 @@
+{
+  "item.tinkersepicfight.spear": "Копьё",
+  "item.tinkersepicfight.spear.description": "Копье - длинное оружие, его дальнобойность и быстрые удары делают его идеальным компаньоном для щита.",
+  "item.tinkersepicfight.tachi": "Тати",
+  "item.tinkersepicfight.tachi.description": "Тати - кровожадное оружие, глубокие рваные раны, которые оно наносит, делают его хорошим выбором для борьбы с быстрыми врагами.",
+  "item.tinkersepicfight.greatsword": "Двуручный меч",
+  "item.tinkersepicfight.greatsword.description": "Двуручный меч - разрушительное оружие, его широкие взмахи и тяжелые удары делают его отличным средством для контроля толпы.",
+  "item.tinkersepicfight.longsword": "Длинный меч",
+  "item.tinkersepicfight.longsword.description": "Длинный меч - универсальное оружие, он представляет собой сбалансированный вариант для тех, кто не хочет пользоваться щитом.",
+  "itemGroup.tinkersepicfight.tools": "TConstruct: Epic Fight"
+}

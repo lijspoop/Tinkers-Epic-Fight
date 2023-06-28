@@ -1,163 +1,164 @@
 buildscript {
-    repositories {
-        mavenLocal()
-        maven { url = 'https://maven.minecraftforge.net/' }
-        maven { url = 'https://libraries.minecraft.net/' }
-        jcenter()
-        mavenCentral()
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.+', changing: true
-        classpath "io.freefair.gradle:lombok-plugin:4.+"
-    }
+	repositories {
+		mavenLocal()
+		maven { url = 'https://maven.minecraftforge.net/' }
+		maven { url = 'https://libraries.minecraft.net/' }
+		jcenter()
+		mavenCentral()
+		maven {
+			name = "sonatype"
+			url = "https://oss.sonatype.org/content/repositories/snapshots/"
+		}
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+	}
 }
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
-apply plugin: "io.freefair.lombok"
 
-version = '1.1.3-1.16.5'
-group = 'magnymbus.tinkersepicfight' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'tinkersepicfight'
+version = "${minecraftVersion}-${specificationVersion}"
+group = "${modGroup}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "${modId}"
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
+java.toolchain.languageVersion = JavaLanguageVersion.of(modJavaVersion) // Mojang ships Java 8: end users, so your mod should target Java 8.
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
-    // Channel:   Version:
-    // snapshot   YYYYMMDD   Snapshot are built nightly.
-    // stable     #          Stables are built at the discretion of the MCP team.
-    // official   MCVersion  Official field/method names from Mojang mapping files
-    //
-    // You must be aware of the Mojang license when using the 'official' mappings.
-    // See more information here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
-    //
-    // Use non-default mappings at your own risk. they may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'official', version: '1.16.5'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+	// The mappings can be changed at any time, and must be in the following format.
+	// Channel:   Version:
+	// snapshot   YYYYMMDD   Snapshot are built nightly.
+	// stable     #          Stables are built at the discretion of the MCP team.
+	// official   MCVersion  Official field/method names from Mojang mapping files
+	//
+	// You must be aware of the Mojang license when using the 'official' mappings.
+	// See more information here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
+	//
+	// Use non-default mappings at your own risk. they may not always work.
+	// Simply re-run your setup task after changing the mappings: update your workspace.
+	mappings channel: 'official', version: '1.16.5'
+	// makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this: disable.
 
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
-    runs {
-        client {
-            workingDirectory project.file('run')
+	// accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
-            // Recommended logging data for a userdev environment
-            // The markers can be changed as needed.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
-            property 'forge.logging.markers', 'REGISTRIES'
+	// Default run configurations.
+	// These can be tweaked, removed, or duplicated as needed.
+	runs {
+		client {
+			workingDirectory project.file('run')
 
-            // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
-            property 'forge.logging.console.level', 'debug'
-            args '--mod', 'tinkersepicfight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'tconstruct'
+			// Recommended logging data for a userdev environment
+			// The markers can be changed as needed.
+			// "SCAN": For mods scan.
+			// "REGISTRIES": For firing of registry events.
+			// "REGISTRYDUMP": For getting the contents of all registries.
+			property 'forge.logging.markers', 'REGISTRIES'
 
-            mods {
-                tinkersepicfight {
-                    source sourceSets.main
-                }
-            }
-        }
+			// Recommended logging level for the console
+			// You can set various levels here.
+			// Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
+			property 'forge.logging.console.level', 'debug'
+			args '--mod', 'tinkersepicfight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'tconstruct'
 
-        server {
-            workingDirectory project.file('run')
+			mods {
+				tinkersepicfight {
+					source sourceSets.main
+				}
+			}
+		}
 
-            // Recommended logging data for a userdev environment
-            // The markers can be changed as needed.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
-            property 'forge.logging.markers', 'REGISTRIES'
+		server {
+			workingDirectory project.file('run')
 
-            // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
-            property 'forge.logging.console.level', 'debug'
-            args '--mod', 'tinkersepicfight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'tconstruct'
+			// Recommended logging data for a userdev environment
+			// The markers can be changed as needed.
+			// "SCAN": For mods scan.
+			// "REGISTRIES": For firing of registry events.
+			// "REGISTRYDUMP": For getting the contents of all registries.
+			property 'forge.logging.markers', 'REGISTRIES'
 
-            mods {
-                tinkersepicfight {
-                    source sourceSets.main
-                }
-            }
-        }
+			// Recommended logging level for the console
+			// You can set various levels here.
+			// Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
+			property 'forge.logging.console.level', 'debug'
+			args '--mod', 'tinkersepicfight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'tconstruct', '--existing-mod', 'epicfight'
 
-        data {
-            workingDirectory project.file('run')
+			mods {
+				tinkersepicfight {
+					source sourceSets.main
+				}
+			}
+		}
 
-            // Recommended logging data for a userdev environment
-            // The markers can be changed as needed.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
-            property 'forge.logging.markers', 'REGISTRIES'
+		data {
+			workingDirectory project.file('run')
 
-            // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
-            property 'forge.logging.console.level', 'debug'
+			// Recommended logging data for a userdev environment
+			// The markers can be changed as needed.
+			// "SCAN": For mods scan.
+			// "REGISTRIES": For firing of registry events.
+			// "REGISTRYDUMP": For getting the contents of all registries.
+			property 'forge.logging.markers', 'REGISTRIES'
 
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'tinkersepicfight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'tconstruct'
+			// Recommended logging level for the console
+			// You can set various levels here.
+			// Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
+			property 'forge.logging.console.level', 'debug'
 
-            mods {
-                tinkersepicfight {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
+			// Specify the modid for data generation, where: output the resulting resource, and where: look for existing resources.
+			args '--mod', 'tinkersepicfight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'tconstruct'
+
+			mods {
+				tinkersepicfight {
+					source sourceSets.main
+				}
+			}
+		}
+	}
 }
 
 // Include resources generated by data generators.
 sourceSets {
-    main {
-        resources {
-            srcDirs "src/generated/resources"
-            //But exclude the cache of the generated data from what gets built
-            exclude '.cache'
-        }
-    }
+	main {
+		resources {
+			srcDirs "src/generated/resources"
+			//But exclude the cache of the generated data from what gets built
+			exclude '.cache'
+		}
+	}
 }
 
 repositories {
-    mavenCentral()
-    mavenLocal()
-    maven { // Vanilla
-        name 'Vanilla'
-        url 'https://libraries.minecraft.net/'
-    }
-    maven { // Forge
-        name 'ForgeFS'
-        url 'https://maven.minecraftforge.net/'
-    }
-    maven { // Mantle and JEI
-        name 'DVS1 Maven FS'
-        url 'https://dvs1.progwml6.com/files/maven'
-    }
-    maven { // TOP
-        name 'tterrag maven'
-        url "https://maven.tterrag.com/"
-    }
-    maven { // CraftTweaker
-        name 'BlameJared Maven'
-        url 'https://maven.blamejared.com'
-    }
+	mavenCentral()
+	mavenLocal()
+	maven { // Vanilla
+		name 'Vanilla'
+		url 'https://libraries.minecraft.net/'
+	}
+	maven { // Forge
+		name 'ForgeFS'
+		url 'https://maven.minecraftforge.net/'
+	}
+	maven { // Mantle and JEI
+		name 'DVS1 Maven FS'
+		url 'https://dvs1.progwml6.com/files/maven'
+	}
+	maven { //:P
+		name 'tterrag maven'
+		url "https://maven.tterrag.com/"
+	}
+	maven { // CraftTweaker
+		name 'BlameJared Maven'
+		url 'https://maven.blamejared.com'
+	}
+	flatDir {
+		dir 'libs'
+	}
 //    maven {
 //        url "https://www.cursemaven.com"
 //        content {
@@ -167,51 +168,78 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.8'
+	minecraft 'net.minecraftforge:forge:1.16.5-36.2.34'
 
-	compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.1.75:api")
-	runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.1.75")
-	
-	implementation fg.deobf("slimeknights.mantle:Mantle:1.16.5-1.6.127")
-    implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.16.5-3.2.1.296")
+	compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.8.0.1009:api")
+	runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.8.0.1009")
+
+	implementation fg.deobf("slimeknights.mantle:Mantle:1.16.5-1.6.157")
+	implementation fg.deobf("slimeknights.tconstruct:TConstruct:1.16.5-3.3.4.335")
+	implementation fg.deobf("com.yesman.epicfight:epicfight:16.6.4")
 }
 
-// Example for how to get properties into the manifest for reading by the runtime..
+// Example for how: get properties into the manifest for reading by the runtime..
 jar {
-    manifest {
-        attributes([
-            "Specification-Title": "tinkersepicfight",
-            "Specification-Vendor": "magnymbus",
-            "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"mcmod_group",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-        ])
-    }
+	archiveVersion = "${minecraftVersion}-${specificationVersion}"
+	manifest {
+		attributes([
+			"Specification-Title"     : "${modId}",
+			"Specification-Vendor"    : "${modAuthor}",
+			"Specification-Version"   : "${specificationVersion}",
+			"Implementation-Title"    : "${name}",
+			"Implementation-Version"  : "${archiveVersion}",
+			"Implementation-Vendor"   : "${modAuthor}",
+			"Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+		])
+	}
 }
 
-// Example configuration to allow publishing using the maven-publish task
-// This is the preferred method to reobfuscate your jar file
-jar.finalizedBy('reobfJar') 
+// Example configuration: allow publishing using the maven-publish task
+// This is the preferred method: reobfuscate your jar file
+jar.finalizedBy('reobfJar')
 // However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
 //publish.dependsOn('reobfJar')
 
-task sourcesJar(type: Jar) {
-    classifier = "sources"
-    from sourceSets.main.allJava
+tasks.register('sourcesJar', Jar) {
+	archiveClassifier.set("sources")
+	from sourceSets.main.allJava
 }
 
-task deobfJar(type: Jar) {
-    classifier = "deobf"
-    from sourceSets.main.output
+tasks.register('deobfJar', Jar) {
+	archiveClassifier.set("deobf")
+	from sourceSets.main.output
 }
 
 artifacts {
-    archives sourcesJar
-    archives deobfJar
+	archives sourcesJar
+	archives deobfJar
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+tasks.withType(JavaCompile).configureEach {
+	options.encoding = 'UTF-8'
+}
+
+tasks.withType(ProcessResources).configureEach {
+	// This will ensure that this task is redone when the versions change.
+	inputs.property('version', specificationVersion)
+
+	filesMatching("META-INF/mods.toml") {
+		expand([
+						"forgeVersionRange"     : forgeVersionRange,
+						"githubUrl"             : githubUrl,
+						"loaderVersionRange"    : loaderVersionRange,
+						"minecraftVersion"      : minecraftVersion,
+						"minecraftVersionRange" : minecraftVersionRange,
+						"epicfightVersion"      : epicfightVersion,
+						"epicfightVersionRange" : epicfightVersionRange,
+						"tconstructVersion"     : tconstructVersion,
+						"tconstructVersionRange": tconstructVersionRange,
+						"modAuthor"             : modAuthor,
+						"modDescription"        : modDescription,
+						"modId"                 : modId,
+						"modJavaVersion"        : modJavaVersion,
+						"modName"               : modName,
+						"version"               : specificationVersion,
+		])
+	}
 }

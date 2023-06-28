@@ -1,7 +1,7 @@
-package magnymbus.tinkersepicfight.data;
+package neutron6663.tinkersepicfight.data;
 
-import magnymbus.tinkersepicfight.item.Spear;
-import magnymbus.tinkersepicfight.item.Tachi;
+import neutron6663.tinkersepicfight.item.Spear;
+import neutron6663.tinkersepicfight.item.Tachi;
 import net.minecraft.data.DataGenerator;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;

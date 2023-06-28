@@ -1,6 +1,6 @@
-package magnymbus.tinkersepicfight.data;
+package neutron6663.tinkersepicfight.data;
 
-import magnymbus.tinkersepicfight.TEF;
+import neutron6663.tinkersepicfight.TEF;
 import slimeknights.tconstruct.library.client.data.material.AbstractPartSpriteProvider;
 
 public class PartSpriteProvider extends AbstractPartSpriteProvider {

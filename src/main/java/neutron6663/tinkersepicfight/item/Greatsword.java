@@ -1,6 +1,5 @@
-package magnymbus.tinkersepicfight.item;
+package neutron6663.tinkersepicfight.item;
 
-import magnymbus.tinkersepicfight.TEFTools;
 import slimeknights.tconstruct.library.tools.ToolDefinition;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 import slimeknights.tconstruct.tools.TinkerModifiers;

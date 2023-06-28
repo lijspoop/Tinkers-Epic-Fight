@@ -1,7 +1,7 @@
-package magnymbus.tinkersepicfight;
+package neutron6663.tinkersepicfight;
 
-import magnymbus.tinkersepicfight.item.Spear;
-import magnymbus.tinkersepicfight.item.Tachi;
+import neutron6663.tinkersepicfight.item.Spear;
+import neutron6663.tinkersepicfight.item.Tachi;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import slimeknights.mantle.registration.object.ItemObject;

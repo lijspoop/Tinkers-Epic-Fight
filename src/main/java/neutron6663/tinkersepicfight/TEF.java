@@ -1,17 +1,16 @@
-package magnymbus.tinkersepicfight;
+package neutron6663.tinkersepicfight;
 
+import neutron6663.tinkersepicfight.data.DefinitionDataProvider;
+import neutron6663.tinkersepicfight.data.PartSpriteProvider;
+import neutron6663.tinkersepicfight.data.RecipeProvider;
+import neutron6663.tinkersepicfight.data.StationSlotLayoutProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import magnymbus.tinkersepicfight.TEF;
-import magnymbus.tinkersepicfight.data.DefinitionDataProvider;
-import magnymbus.tinkersepicfight.data.PartSpriteProvider;
-import magnymbus.tinkersepicfight.data.RecipeProvider;
-import magnymbus.tinkersepicfight.data.StationSlotLayoutProvider;
-import magnymbus.tinkersepicfight.data.TEFTagsProvider;
+import neutron6663.tinkersepicfight.data.TEFTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

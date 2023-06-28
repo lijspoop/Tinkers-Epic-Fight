@@ -1,4 +1,4 @@
-package magnymbus.tinkersepicfight.data;
+package neutron6663.tinkersepicfight.data;
 
 import static slimeknights.tconstruct.common.TinkerTags.Items.AOE;
 import static slimeknights.tconstruct.common.TinkerTags.Items.DURABILITY;
@@ -17,7 +17,7 @@ import net.minecraft.tags.ITag.INamedTag;
 import net.minecraft.util.IItemProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import magnymbus.tinkersepicfight.TEFTools;
+import neutron6663.tinkersepicfight.TEFTools;
 
 public class TEFTagsProvider extends ItemTagsProvider {
 

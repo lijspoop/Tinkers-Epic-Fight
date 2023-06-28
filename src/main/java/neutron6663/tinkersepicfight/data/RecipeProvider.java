@@ -1,8 +1,8 @@
-package magnymbus.tinkersepicfight.data;
+package neutron6663.tinkersepicfight.data;
 
 import java.util.function.Consumer;
 
-import magnymbus.tinkersepicfight.TEFTools;
+import neutron6663.tinkersepicfight.TEFTools;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import slimeknights.tconstruct.common.data.BaseRecipeProvider;
