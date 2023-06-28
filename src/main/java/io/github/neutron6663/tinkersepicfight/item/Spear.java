@@ -1,6 +1,6 @@
-package neutron6663.tinkersepicfight.item;
+package io.github.neutron6663.tinkersepicfight.item;
 
-import neutron6663.tinkersepicfight.TEFTools;
+import io.github.neutron6663.tinkersepicfight.TEFTools;
 import slimeknights.tconstruct.library.tools.ToolDefinition;
 import slimeknights.tconstruct.tools.item.small.SwordTool;
 

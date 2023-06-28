@@ -1,6 +1,6 @@
-package neutron6663.tinkersepicfight.data;
+package io.github.neutron6663.tinkersepicfight.data;
 
-import neutron6663.tinkersepicfight.TEFTools;
+import io.github.neutron6663.tinkersepicfight.TEFTools;
 import net.minecraft.data.DataGenerator;
 import slimeknights.tconstruct.library.data.tinkering.AbstractStationSlotLayoutProvider;
 import slimeknights.tconstruct.tools.TinkerToolParts;

@@ -1,6 +1,6 @@
-package neutron6663.tinkersepicfight.data;
+package io.github.neutron6663.tinkersepicfight.data;
 
-import neutron6663.tinkersepicfight.TEF;
+import io.github.neutron6663.tinkersepicfight.TEF;
 import slimeknights.tconstruct.library.client.data.material.AbstractPartSpriteProvider;
 
 public class PartSpriteProvider extends AbstractPartSpriteProvider {

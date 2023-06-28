@@ -1,4 +1,4 @@
-package neutron6663.tinkersepicfight.data;
+package io.github.neutron6663.tinkersepicfight.data;
 
 import static slimeknights.tconstruct.common.TinkerTags.Items.AOE;
 import static slimeknights.tconstruct.common.TinkerTags.Items.DURABILITY;
@@ -9,6 +9,7 @@ import static slimeknights.tconstruct.common.TinkerTags.Items.SWORD;
 import static slimeknights.tconstruct.common.TinkerTags.Items.ONE_HANDED;
 import static slimeknights.tconstruct.common.TinkerTags.Items.TWO_HANDED;
 
+import io.github.neutron6663.tinkersepicfight.TEFTools;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
@@ -16,8 +17,6 @@ import net.minecraft.item.Item;
 import net.minecraft.tags.ITag.INamedTag;
 import net.minecraft.util.IItemProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-
-import neutron6663.tinkersepicfight.TEFTools;
 
 public class TEFTagsProvider extends ItemTagsProvider {
 

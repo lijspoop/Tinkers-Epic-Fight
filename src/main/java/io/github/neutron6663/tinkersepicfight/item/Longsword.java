@@ -1,16 +1,16 @@
-package neutron6663.tinkersepicfight.item;
+package io.github.neutron6663.tinkersepicfight.item;
 
 import slimeknights.tconstruct.library.tools.ToolDefinition;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.item.small.SweepingSwordTool;
 
-public class Greatsword extends SweepingSwordTool {
+public class Longsword extends SweepingSwordTool {
 
-  // public static final ToolDefinition GREATSWORD =
-  // ToolDefinition.builder(TEFTools.greatsword).meleeHarvest().build();
+  // public static final ToolDefinition LONGSWORD =
+  // ToolDefinition.builder(TEFTools.longsword).meleeHarvest().build();
 
-  public Greatsword(Properties properties, ToolDefinition toolDefinition) {
+  public Longsword(Properties properties, ToolDefinition toolDefinition) {
     super(properties, toolDefinition);
   }
 

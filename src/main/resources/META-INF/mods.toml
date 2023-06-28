@@ -1,15 +1,15 @@
 modLoader = "javafml"
 loaderVersion = "${loaderVersionRange}"
-issueTrackerURL = "${githubUrl}/issues?q=is%3Aissue"
 license = "MIT"
+issueTrackerURL = "${githubUrl}/issues?q=is%3Aissue"
 
 [[mods]]
-modId = "${modId}"
-version = "${version}"
 displayName = "${modName}"
-displayURL = "${githubUrl}"
-updateJSONURL = "${githubUrl}/blob/main/updates.json"
+version = "${file.jarVersion}"
+modId = "${modId}"
 authors = "${modAuthor}"
+displayURL = "${githubUrl}"
+updateJSONURL = "${githubRaw}/updates.json"
 description = '''
 ${modDescription}
 '''
